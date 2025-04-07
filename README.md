@@ -78,5 +78,4 @@ Este un exemplu solid de integrare a viziunii computerizate și a metodelor nume
 
 ---
 
-## 📦 Exemplu structură fișiere
 
