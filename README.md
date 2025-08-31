@@ -1,81 +1,79 @@
-# 👁️✋ Sistem de Recunoaștere Facială și Numărare de Degete în Timp Real
+# 👁️✋ Real-Time Face Recognition and Finger Counting System
 
-## 📌 Descriere generală
-Acest proiect integrează două funcționalități principale într-o singură aplicație interactivă:
+## 📌 General Description
+This project integrates two main functionalities into a single interactive application:
 
-- **Recunoaștere facială în timp real**, pentru autentificare biometrică precisă.
-- **Detectare și numărare de degete**, bazată pe gesturi ale mâinii, pentru interacțiune hands-free.
+- **Real-time face recognition** for precise biometric authentication.  
+- **Hand gesture–based finger detection and counting** for hands-free interaction.  
 
-Sistemul este optimizat pentru performanță ridicată, folosind procesare paralelă și tehnici de analiză matematică avansată.
-
----
-
-## 🛠️ Tehnologii și biblioteci utilizate
-
-| Funcționalitate                  | Bibliotecă folosită      |
-|----------------------------------|---------------------------|
-| Recunoaștere facială             | DeepFace                 |
-| Procesare video & imagini        | OpenCV (`cv2`)           |
-| Calcul numeric                   | NumPy                    |
-| Detectarea mâinilor/degetelor    | MediaPipe                |
-| Vizualizare date                 | Matplotlib               |
-| Procesare paralelă               | `threading`, `queue`     |
+The system is optimized for high performance, using parallel processing and advanced mathematical analysis techniques.
 
 ---
 
-## 🚀 Funcționalități detaliate
+## 🛠️ Technologies and Libraries Used
 
-### ✅ Recunoaștere Facială
-- Extrage trăsături faciale cu DeepFace.
-- Calculează similaritatea între fețe folosind **Metoda Puterii (Power Method)**.
-- Integrează un sistem de autentificare cu prag configurabil (default: `0.5`).
-- Procesare eficientă prin threading și optimizare video cu buffer.
-
-### ✋ Numărare de Degete
-- Utilizează MediaPipe pentru detecția articulațiilor mâinilor.
-- Verifică dacă vârful fiecărui deget (**TIP**) este deasupra punctului intermediar (**IP**) pentru a determina dacă degetul este ridicat.
-- Suportă detectarea simultană a **două mâini**.
-- Numărul de degete este afișat în timp real.
+| Functionality                   | Library Used             |
+|---------------------------------|---------------------------|
+| Face recognition                | DeepFace                 |
+| Video & image processing        | OpenCV (`cv2`)           |
+| Numerical computation           | NumPy                    |
+| Hand/finger detection           | MediaPipe                |
+| Data visualization              | Matplotlib               |
+| Parallel processing             | `threading`, `queue`     |
 
 ---
 
-## 📊 Caracteristici speciale
+## 🚀 Detailed Functionalities
 
-- **Comutare moduri**: apăsarea tastei `m` permite trecerea între modul de recunoaștere facială și numărare de degete.
-- **Analiză performanță**: tasta `q` generează grafice comparative și analizează performanța metodei Power vs `np.linalg.eig()`.
-- **Monitorizare continuă**: log automat al scorurilor de similitudine și al performanței sistemului.
-- **Interfață live**: feedback vizual clar cu starea autentificării și reprezentarea grafică a mâinilor și degetelor.
+### ✅ Face Recognition
+- Extracts facial features with DeepFace.  
+- Computes similarity between faces using the **Power Method**.  
+- Integrates an authentication system with a configurable threshold (default: `0.5`).  
+- Efficient processing with threading and buffered video optimization.  
 
----
-
-## ⚙️ Performanță
-
-| Modul                   | Timp mediu procesare per cadru |
-|------------------------|-------------------------------|
-| Recunoaștere facială   | 200–500 ms                    |
-| Numărare de degete     | 10–30 ms                      |
-
-- **Rata de succes estimată**: `90%`
-- Comparații automate între metodele numerice (Power vs Eig) la fiecare **5 cadre**, fără impact semnificativ asupra performanței generale.
+### ✋ Finger Counting
+- Uses MediaPipe for hand joint detection.  
+- Checks if each fingertip (**TIP**) is above its intermediate point (**IP**) to determine if a finger is raised.  
+- Supports simultaneous detection of **two hands**.  
+- The finger count is displayed in real time.  
 
 ---
 
-## 📐 Considerații matematice
+## 📊 Special Features
 
-- După extragerea vectorilor faciali, similaritatea este evaluată prin **calculul valorii proprii dominante**.
-- Se utilizează o **implementare manuală a metodei puterii**, validată comparativ cu funcția `np.linalg.eig()` din NumPy.
-
----
-
-## ✅ Concluzie
-
-Acest sistem inovator funcționează ca un **portar digital**:
-
-- Te **recunoaște** pe baza trăsăturilor faciale.
-- Îți permite să **controlezi aplicația** prin gesturi simple ale mâinii.
-
-Este un exemplu solid de integrare a viziunii computerizate și a metodelor numerice într-un sistem modern, interactiv și scalabil.
+- **Mode switching**: pressing the `m` key toggles between face recognition and finger counting modes.  
+- **Performance analysis**: pressing `q` generates comparative charts and analyzes Power Method vs `np.linalg.eig()`.  
+- **Continuous monitoring**: automatic logging of similarity scores and system performance.  
+- **Live interface**: clear visual feedback with authentication status and graphical representation of hands and fingers.  
 
 ---
 
+## ⚙️ Performance
 
+| Module                 | Avg. processing time per frame |
+|-------------------------|--------------------------------|
+| Face recognition        | 200–500 ms                     |
+| Finger counting         | 10–30 ms                       |
+
+- **Estimated success rate**: `90%`  
+- Automatic comparisons between numerical methods (Power vs Eig) every **5 frames**, without significant impact on overall performance.  
+
+---
+
+## 📐 Mathematical Considerations
+
+- After extracting facial vectors, similarity is evaluated through **calculation of the dominant eigenvalue**.  
+- A **manual implementation of the Power Method** is used, validated against NumPy’s `np.linalg.eig()`.  
+
+---
+
+## ✅ Conclusion
+
+This innovative system works as a **digital gatekeeper**:
+
+- It **recognizes you** based on your facial features.  
+- It allows you to **control the application** through simple hand gestures.  
+
+It stands as a solid example of integrating computer vision and numerical methods into a modern, interactive, and scalable system.  
+
+---
